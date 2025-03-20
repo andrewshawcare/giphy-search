@@ -10,7 +10,7 @@ test("includes the appropriate text content", async () => {
   document.body.appendChild(rootElement);
 
   global.IS_REACT_ACT_ENVIRONMENT = true;
-  await act(() => {
+  await act(async () => {
     const root = createRoot(rootElement);
     root.render(<IndexRoute path="/" />);
   });
