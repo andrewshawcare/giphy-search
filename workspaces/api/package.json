@@ -8,9 +8,11 @@
         "serve": "node --watch --env-file='.env' dist/main.js"
     },
     "dependencies": {
-        "express": "4.21.2"
+        "express": "4.21.2",
+        "cors": "2.8.5"
     },
     "devDependencies": {
+        "@types/cors": "2.8.17",
         "@types/express": "5.0.1",
         "@types/supertest": "6.0.2",
         "supertest": "7.0.0"
