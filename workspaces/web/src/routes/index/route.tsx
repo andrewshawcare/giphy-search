@@ -1,10 +1,10 @@
 import { Route, RouteProps } from "navigo-react";
-import { Hello } from "../../components/hello/component";
+import { Images } from "../../src/components/images/component";
 
 export function IndexRoute(props: RouteProps) {
   return (
     <Route {...props}>
-      <Hello name="Andrew" />
+      <Images />
     </Route>
   );
 }

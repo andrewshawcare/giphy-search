@@ -1,6 +1,7 @@
 import CORS from "cors";
 import Express from "express";
-import IndexRouter from "./routers/index/index.js";
+import { HelloRouter } from "./routers/hello/index.js";
+import SearchRouter from "./routers/search/index.js";
 
 export const app = Express();
 
@@ -12,4 +13,5 @@ app.use(
   })
 );
 
-app.use("/", IndexRouter);
+app.use("/hello", HelloRouter);
+app.use("/search", SearchRouter);
