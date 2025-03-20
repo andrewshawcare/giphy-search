@@ -11,7 +11,8 @@ test("includes the appropriate text content", async () => {
 
   global.IS_REACT_ACT_ENVIRONMENT = true;
   await act(() => {
-    createRoot(rootElement).render(<IndexRoute path="/" />);
+    const root = createRoot(rootElement);
+    root.render(<IndexRoute path="/" />);
   });
 
   assert.strictEqual(rootElement.textContent, "");
