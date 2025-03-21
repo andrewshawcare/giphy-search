@@ -60,6 +60,21 @@ body {
 
     column-gap: 0;
 
+    dialog {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      border: none;
+      background: #111;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     figure {
       margin: 0;
       display: grid;
