@@ -1,5 +1,5 @@
 {
-    "name": "gotcare",
+    "name": "giphy-search",
     "type": "module",
     "workspaces": [
         "workspaces/*"

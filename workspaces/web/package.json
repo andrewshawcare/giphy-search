@@ -1,5 +1,5 @@
 {
-    "name": "@gotcare/web",
+    "name": "web",
     "type": "module",
     "source": "src/index.html",
     "scripts": {

@@ -1,5 +1,5 @@
 {
-    "name": "@gotcare/api",
+    "name": "api",
     "type": "module",
     "scripts": {
         "build": "tsc",
