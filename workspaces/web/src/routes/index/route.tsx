@@ -20,7 +20,7 @@ async function searchImages({ origin, query }: SearchImagesParameters) {
 }
 
 export function IndexRoute(props: RouteProps) {
-  const [query, setQuery] = useState<string>("dogs");
+  const [query, setQuery] = useState<string>("abstract");
   const [imageURLs, setImageURLs] = useState<string[]>([]);
   const applicationContext = useContext(ApplicationContext);
 
