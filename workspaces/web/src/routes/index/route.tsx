@@ -1,11 +1,37 @@
 import { Route, RouteProps } from "navigo-react";
 import { Images } from "../../components/images/component.jsx";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Search } from "../../components/search/component.js";
 import "./stylesheet.css";
+import { ApplicationContext } from "../../application-context";
+
+interface SearchImagesParameters {
+  origin: string;
+  query: string;
+}
+
+async function searchImages({ origin, query }: SearchImagesParameters) {
+  const imageSearchResponse = await fetch(`${origin}/search/${query}`);
+  const imageSearchJson = await imageSearchResponse.json();
+  return typeof imageSearchJson === "object"
+    ? Object.values(imageSearchJson)
+        .flat()
+        .filter((imageUrl) => typeof imageUrl === "string")
+    : [];
+}
 
 export function IndexRoute(props: RouteProps) {
   const [query, setQuery] = useState<string>("dogs");
+  const [imageURLs, setImageURLs] = useState<string[]>([]);
+  const applicationContext = useContext(ApplicationContext);
+
+  useEffect(() => {
+    searchImages({
+      origin: applicationContext.api.origin,
+      query: query,
+    }).then(setImageURLs);
+  }, [query]);
+
   return (
     <Route {...props}>
       <h1>GIPHY Search</h1>
@@ -13,7 +39,7 @@ export function IndexRoute(props: RouteProps) {
         initialSearchValue={query}
         onQueryChange={({ query }) => setQuery(query)}
       />
-      <Images query={query} />
+      <Images imageURLs={imageURLs} />
     </Route>
   );
 }
