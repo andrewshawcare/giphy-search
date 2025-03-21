@@ -11,9 +11,9 @@ async function searchImages({ origin, query }: SearchImagesParameters) {
   const imageSearchResponse = await fetch(`${origin}/search/${query}`);
   const imageSearchJson = await imageSearchResponse.json();
   return typeof imageSearchJson === "object"
-    ? Object.values(imageSearchJson).filter(
-        (imageUrl) => typeof imageUrl !== "string"
-      )
+    ? Object.values(imageSearchJson)
+        .flat()
+        .filter((imageUrl) => typeof imageUrl === "string")
     : [];
 }
 
