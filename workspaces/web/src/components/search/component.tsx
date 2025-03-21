@@ -1,11 +1,14 @@
 import { useState } from "react";
 
 interface SearchProps {
+  initialSearchValue: string;
   onQueryChange: ({ query }: { query: string }) => void;
 }
 
 export function Search(props: SearchProps) {
-  const [searchValue, setSearchValue] = useState<string>("");
+  const [searchValue, setSearchValue] = useState<string>(
+    props.initialSearchValue
+  );
 
   return (
     <form
