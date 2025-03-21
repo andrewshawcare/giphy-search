@@ -1,8 +1,8 @@
-interface ImagesProps {
+interface ImageListProps {
   imageURLs: string[];
 }
 
-export function ImageList({ imageURLs }: ImagesProps) {
+export function ImageList({ imageURLs }: ImageListProps) {
   return (
     <div className="image list">
       {imageURLs.map((imageURL) => {
