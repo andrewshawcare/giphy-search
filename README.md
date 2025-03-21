@@ -1,4 +1,4 @@
-# gotcare
+# GIPHY Search
 
 ## Getting started
 
