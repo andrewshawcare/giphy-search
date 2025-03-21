@@ -11,6 +11,7 @@ export function ImageList({ imageURLs }: ImageListProps) {
     <div className="image list">
       {activeKey === "" ? null : (
         <dialog open={true} onClick={() => setActiveKey("")}>
+          <img className="backlight" src={activeKey} />
           <img src={activeKey} />
         </dialog>
       )}

@@ -73,6 +73,12 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
+
+      .backlight {
+        position: absolute;
+        filter: blur(2rem);
+        z-index: -1;
+      }
     }
 
     figure {
