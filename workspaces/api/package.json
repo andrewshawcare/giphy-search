@@ -4,9 +4,8 @@
     "scripts": {
         "build": "tsc",
         "lint": "eslint",
-        "test": "node --test 'dist/**/test.js'",
-        "start": "node --env-file='.env' 'dist/main.js'",
-        "serve": "tsc --watch & node --env-file='.env' --watch-path='dist' 'dist/main.js'"
+        "test": "tsc && node --test 'dist/**/test.js'",
+        "develop": "tsc --watch & node --env-file='.env' --watch-path='dist' 'dist/main.js'"
     },
     "dependencies": {
         "express": "4.21.2",

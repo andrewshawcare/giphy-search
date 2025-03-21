@@ -6,7 +6,7 @@
         "build": "parcel build",
         "lint": "eslint",
         "test": "tsx --test '**/test.tsx'",
-        "serve": "parcel"
+        "develop": "parcel"
     },
     "dependencies": {
         "navigo-react": "2.0.3",

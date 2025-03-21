@@ -8,7 +8,7 @@
         "build": "nx run-many --targets build",
         "lint": "nx run-many --targets lint",
         "test": "nx run-many --targets test",
-        "serve": "nx run-many --targets serve"
+        "develop": "nx run-many --targets develop"
     },
     "devDependencies": {
         "@types/node": "22.13.10",
