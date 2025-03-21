@@ -7,7 +7,7 @@
 Ensure you add `.env` files to each workspace, using the appropriate `.env.template` file as a base:
 
 ```sh
-for dir in "./workspaces/*"; do (cd "${dir} && cp -n .env.template .env); done
+for dir in workspaces/*; do (cd "${dir}" && cp -n .env.template .env); done
 ```
 
 ### Build
