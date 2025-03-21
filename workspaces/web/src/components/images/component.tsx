@@ -12,7 +12,7 @@ async function searchImages({ origin, query }: SearchImagesParameters) {
   const imageSearchJson = await imageSearchResponse.json();
   return typeof imageSearchJson === "object"
     ? Object.values(imageSearchJson).filter(
-        (imageUrl) => typeof imageUrl === "string"
+        (imageUrl) => typeof imageUrl !== "string"
       )
     : [];
 }
@@ -21,16 +21,16 @@ interface ImagesProps {
   query: string;
 }
 
-export function Images(props: ImagesProps) {
+export function Images({ query }: ImagesProps) {
   const applicationContext = useContext(ApplicationContext);
   const [imageUrls, setImageUrls] = useState<string[]>([]);
 
   useEffect(() => {
     searchImages({
       origin: applicationContext.api.origin,
-      query: props.query,
+      query: query,
     }).then(setImageUrls);
-  }, [props.query]);
+  }, [query]);
 
   return (
     <div className="images">
