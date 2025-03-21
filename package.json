@@ -6,8 +6,10 @@
     ],
     "scripts": {
         "build": "nx run-many --targets build",
+        "postbuild": "cp -r ./workspaces/api/dist ./dist/ && cp -r ./workspaces/web/dist ./dist/static/",
         "lint": "nx run-many --targets lint",
         "test": "nx run-many --targets test",
+        "start": "cd ./dist && node ./main.js",
         "develop": "nx run-many --targets develop"
     },
     "devDependencies": {

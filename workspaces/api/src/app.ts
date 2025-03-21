@@ -4,6 +4,8 @@ import SearchRouter from "./routers/search/index.js";
 
 export const app = Express();
 
+app.use(Express.static("static"));
+
 app.use(
   CORS({
     origin(requestOrigin, callback) {
@@ -12,4 +14,4 @@ app.use(
   })
 );
 
-app.use("/search", SearchRouter);
+app.use("/api/search", SearchRouter);

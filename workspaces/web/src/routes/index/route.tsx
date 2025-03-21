@@ -11,7 +11,7 @@ interface SearchImagesParameters {
 }
 
 async function searchImages({ origin, query }: SearchImagesParameters) {
-  const imageSearchResponse = await fetch(`${origin}/search/${query}`);
+  const imageSearchResponse = await fetch(`${origin}/api/search/${query}`);
   const imageSearchJson = await imageSearchResponse.json();
   return typeof imageSearchJson === "object"
     ? Object.values(imageSearchJson)
