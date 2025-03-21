@@ -12,7 +12,7 @@ test("includes the title", async () => {
   global.IS_REACT_ACT_ENVIRONMENT = true;
   await act(async () => {
     const root = createRoot(rootElement);
-    root.render(<IndexRoute path="/" />);
+    root.render(<SearchRoute path="/" />);
   });
 
   const h1Element = rootElement.querySelector(".index.route header h1")!;
