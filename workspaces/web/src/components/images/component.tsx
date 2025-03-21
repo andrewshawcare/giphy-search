@@ -1,5 +1,3 @@
-import "./stylesheet.css";
-
 interface ImagesProps {
   imageURLs: string[];
 }

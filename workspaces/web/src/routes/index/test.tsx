@@ -5,7 +5,7 @@ import { IndexRoute } from "./route";
 import { act } from "react";
 import { createRoot } from "react-dom/client";
 
-test("includes the appropriate text content", async () => {
+test("includes the title", async () => {
   const rootElement = document.createElement("main");
   document.body.appendChild(rootElement);
 
@@ -15,5 +15,7 @@ test("includes the appropriate text content", async () => {
     root.render(<IndexRoute path="/" />);
   });
 
-  assert.strictEqual(rootElement.textContent, "");
+  const h1Element = rootElement.querySelector(".index.route header h1")!;
+
+  assert.strictEqual(h1Element.textContent, "GIPHY Search");
 });

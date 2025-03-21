@@ -1,9 +1,8 @@
+import { useContext, useEffect, useState } from "react";
 import { Route, RouteProps } from "navigo-react";
 import { Images } from "../../components/images/component.jsx";
-import { useContext, useEffect, useState } from "react";
 import { Search } from "../../components/search/component.js";
-import "./stylesheet.css";
-import { ApplicationContext } from "../../application-context";
+import { ApplicationContext } from "../../application-context.js";
 
 interface SearchImagesParameters {
   origin: string;
@@ -34,9 +33,15 @@ export function IndexRoute(props: RouteProps) {
 
   return (
     <Route {...props}>
-      <h1>GIPHY Search</h1>
-      <Search initialSearchValue={query} onQueryChange={setQuery} />
-      <Images imageURLs={imageURLs} />
+      <article className="index route">
+        <header>
+          <h1>GIPHY Search</h1>
+          <Search initialSearchValue={query} onQueryChange={setQuery} />
+        </header>
+        <main>
+          <Images imageURLs={imageURLs} />
+        </main>
+      </article>
     </Route>
   );
 }

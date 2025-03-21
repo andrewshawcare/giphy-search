@@ -2,6 +2,7 @@
   font-family: Inter, sans-serif;
   font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
 }
+
 @supports (font-variation-settings: normal) {
   :root {
     font-family: InterVariable, sans-serif;
@@ -15,10 +16,52 @@ body {
 }
 
 body {
-  padding: 1rem;
+  background-color: #111;
 }
 
 #root {
   max-width: 600px;
   margin: 0 auto;
+}
+
+.index.route {
+  header {
+    padding: 1rem;
+
+    h1 {
+      color: #ddd;
+      margin: 0 0 1rem 0;
+    }
+
+    .search {
+      input {
+        border-radius: 1rem;
+        background-color: #ddd;
+        width: 100%;
+        font-size: 1.25rem;
+        padding: 1rem;
+      }
+    }
+  }
+
+  .images {
+    column-count: 3;
+
+    @media (max-width: 480px) {
+      column-count: 1;
+    }
+
+    column-gap: 0;
+
+    figure {
+      margin: 0;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      break-inside: avoid;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
