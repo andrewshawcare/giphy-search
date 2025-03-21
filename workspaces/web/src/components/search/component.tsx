@@ -2,7 +2,7 @@ import { useState } from "react";
 
 interface SearchProps {
   initialSearchValue: string;
-  onQueryChange: ({ query }: { query: string }) => void;
+  onQueryChange: (query: string) => void;
 }
 
 export function Search(props: SearchProps) {
@@ -15,7 +15,7 @@ export function Search(props: SearchProps) {
       className="search"
       onSubmit={(event) => {
         event.preventDefault();
-        props.onQueryChange({ query: searchValue });
+        props.onQueryChange(searchValue);
       }}
     >
       <input

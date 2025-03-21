@@ -35,10 +35,7 @@ export function IndexRoute(props: RouteProps) {
   return (
     <Route {...props}>
       <h1>GIPHY Search</h1>
-      <Search
-        initialSearchValue={query}
-        onQueryChange={({ query }) => setQuery(query)}
-      />
+      <Search initialSearchValue={query} onQueryChange={setQuery} />
       <Images imageURLs={imageURLs} />
     </Route>
   );
