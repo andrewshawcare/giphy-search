@@ -1,4 +1,4 @@
-interface Configuration {
+export interface Configuration {
   giphy: {
     origin: string;
     key: string;
