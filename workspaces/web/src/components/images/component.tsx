@@ -8,9 +8,13 @@ interface SearchImagesParameters {
 }
 
 async function searchImages({ origin, query }: SearchImagesParameters) {
-  const response = await fetch(`${origin}/search/${query}`);
-  const json: object = await response.json();
-  return Object.entries(json).flatMap(([key, value]: [any, any]) => value);
+  const imageSearchResponse = await fetch(`${origin}/search/${query}`);
+  const imageSearchJson = await imageSearchResponse.json();
+  return typeof imageSearchJson === "object"
+    ? Object.values(imageSearchJson).filter(
+        (imageUrl) => typeof imageUrl === "string"
+      )
+    : [];
 }
 
 interface ImagesProps {
@@ -22,12 +26,10 @@ export function Images(props: ImagesProps) {
   const [imageUrls, setImageUrls] = useState<string[]>([]);
 
   useEffect(() => {
-    if (typeof props.query === "string") {
-      searchImages({
-        origin: applicationContext.api.origin,
-        query: props.query,
-      }).then(setImageUrls);
-    }
+    searchImages({
+      origin: applicationContext.api.origin,
+      query: props.query,
+    }).then(setImageUrls);
   }, [props.query]);
 
   return (
