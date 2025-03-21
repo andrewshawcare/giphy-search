@@ -1,7 +1,7 @@
 import "global-jsdom/register";
 import test from "node:test";
 import assert from "node:assert";
-import { IndexRoute } from "./route";
+import { SearchRoute } from "./route";
 import { act } from "react";
 import { createRoot } from "react-dom/client";
 
