@@ -1,5 +1,5 @@
 import Express from "express";
-import { GiphyImageService } from "../../services/images/giphy-image-service.js";
+import { GiphyImageService } from "../../service/image/giphy-image-service.js";
 import { configuration } from "../../configuration.js";
 
 const imageService = new GiphyImageService(configuration.giphy);

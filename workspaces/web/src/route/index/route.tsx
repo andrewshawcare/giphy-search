@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Route, RouteProps } from "navigo-react";
-import { Images } from "../../components/images/component.jsx";
-import { Search } from "../../components/search/component.js";
+import { Images } from "../../component/image-list/component.js";
+import { Search } from "../../component/search/component.js";
 import { ApplicationContext } from "../../application-context.js";
 
 interface SearchImagesParameters {

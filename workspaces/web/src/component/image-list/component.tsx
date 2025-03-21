@@ -2,9 +2,9 @@ interface ImagesProps {
   imageURLs: string[];
 }
 
-export function Images({ imageURLs }: ImagesProps) {
+export function ImageList({ imageURLs }: ImagesProps) {
   return (
-    <div className="images">
+    <div className="image list">
       {imageURLs.map((imageURL) => {
         return (
           <figure key={imageURL}>

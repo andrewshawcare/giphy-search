@@ -1,7 +1,7 @@
 import { Switch } from "navigo-react";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { IndexRoute } from "./routes/index/route";
+import { SearchRoute } from "./route/search/route";
 
 const rootElement = document.getElementById("root")!;
 
@@ -10,7 +10,7 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <Switch>
-        <IndexRoute path="/" />
+        <SearchRoute path="/" />
       </Switch>
     </StrictMode>
   );

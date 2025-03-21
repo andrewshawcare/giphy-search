@@ -51,7 +51,7 @@ body {
     }
   }
 
-  .images {
+  .image.list {
     column-count: 3;
 
     @media (max-width: 480px) {
