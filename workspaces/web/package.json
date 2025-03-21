@@ -1,7 +1,7 @@
 {
     "name": "@gotcare/web",
     "type": "module",
-    "source": "main.html",
+    "source": "src/main.html",
     "scripts": {
         "build": "parcel build",
         "lint": "eslint",

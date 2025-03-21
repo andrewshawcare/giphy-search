@@ -1,0 +1,11 @@
+:root {
+  --images-column-count: 3;
+
+  @media (max-width: 480px) {
+    --images-column-count: 1;
+  }
+}
+
+.search {
+  margin: 1rem 0;
+}

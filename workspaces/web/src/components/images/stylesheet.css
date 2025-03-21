@@ -1,0 +1,15 @@
+.images {
+  column-count: var(--images-column-count, 1);
+  column-gap: 0;
+
+  figure {
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    break-inside: avoid;
+
+    img {
+      width: 100%;
+    }
+  }
+}
