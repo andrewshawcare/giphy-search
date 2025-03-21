@@ -20,6 +20,7 @@ async function searchImages({ origin, query }: SearchImagesParameters) {
 }
 
 export function IndexRoute(props: RouteProps) {
+  const giphyImageSrc = new URL("../../giphy.png", import.meta.url).href;
   const [query, setQuery] = useState<string>("abstract");
   const [imageURLs, setImageURLs] = useState<string[]>([]);
   const applicationContext = useContext(ApplicationContext);
@@ -35,7 +36,10 @@ export function IndexRoute(props: RouteProps) {
     <Route {...props}>
       <article className="index route">
         <header>
-          <h1>GIPHY Search</h1>
+          <h1>
+            <img src={giphyImageSrc} />
+            GIPHY Search
+          </h1>
           <Search initialSearchValue={query} onQueryChange={setQuery} />
         </header>
         <main>
