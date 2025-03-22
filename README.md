@@ -1,5 +1,7 @@
 # GIPHY Search
 
+![Abstract shark](./workspaces/web/src/abstract-shark.gif)
+
 Search for GIFs in a jiffy — or a giffy!
 
 ## Getting started
