@@ -9,23 +9,22 @@ export function ImageList({ imageURLs }: ImageListProps) {
 
   return (
     <div className="image list">
-      {activeKey === "" ? (
-        imageURLs.map((imageURL) => {
-          return (
-            <figure
-              key={imageURL}
-              onClick={() => setActiveKey(imageURL)}
-            >
-              <img src={imageURL} />
-            </figure>
-          );
-        })
-      ) : (
+      {activeKey === "" ? null : (
         <dialog open={true} onClick={() => setActiveKey("")}>
           <img src={activeKey} />
           <img className="backlight" src={activeKey} />
         </dialog>
       )}
+      {imageURLs.map((imageURL) => {
+        return (
+          <figure
+            key={imageURL}
+            onClick={() => setActiveKey(activeKey === imageURL ? "" : imageURL)}
+          >
+            <img src={imageURL} />
+          </figure>
+        );
+      })}
     </div>
   );
 }
