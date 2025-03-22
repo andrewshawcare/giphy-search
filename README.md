@@ -1,5 +1,7 @@
 # GIPHY Search
 
+Search for GIFs in a jiffy — or a giffy!
+
 ## Getting started
 
 ### Enviornment variables
