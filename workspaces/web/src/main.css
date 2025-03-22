@@ -76,7 +76,7 @@ body {
       opacity: 0.99;
 
       .backlight {
-        position: absolute;
+        position: fixed;
         filter: blur(2rem);
         z-index: -1;
       }
