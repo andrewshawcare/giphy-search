@@ -14,6 +14,7 @@
         "react-dom": "19.0.0"
     },
     "devDependencies": {
+        "@swc-node/register": "1.10.10",
         "@babel/runtime": "7.26.10",
         "@types/react": "19.0.12",
         "@types/react-dom": "19.0.4",

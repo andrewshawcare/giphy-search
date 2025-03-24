@@ -1,4 +1,4 @@
-import querystring from "node:querystring";
+import QueryString from "node:querystring";
 import { Configuration } from "../../configuration.js";
 import {
   ImagesByYear,
@@ -32,7 +32,7 @@ export class GiphyImageService implements ImageService {
   async search({
     query,
   }: SearchParameters): ReturnType<ImageService["search"]> {
-    const qs = querystring.stringify({
+    const qs = QueryString.stringify({
       api_key: this.configuration.key,
       q: query,
     });
