@@ -21,16 +21,5 @@
         "typescript": "5.8.2",
         "typescript-eslint": "8.26.1",
         "nx": "20.6.2"
-    },
-    "wallaby": {
-        "autoDetect": [
-            "node:test"
-        ],
-        "esmHooks": [
-            "tsx/esm"
-        ],
-        "preloadModules": [
-            "tsx/esm"
-        ]
     }
 }
