@@ -6,7 +6,7 @@
     ],
     "scripts": {
         "build": "nx run-many --targets build",
-        "postbuild": "cp -r ./workspaces/api/dist ./dist/ && cp -r ./workspaces/web/dist ./dist/static/",
+        "postbuild": "rm -rf dist && mv ./workspaces/api/dist ./dist/ && mv ./workspaces/web/dist ./dist/static/",
         "lint": "nx run-many --targets lint",
         "test": "nx run-many --targets test",
         "start": "cd ./dist && node ./main.js",

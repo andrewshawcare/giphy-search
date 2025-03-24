@@ -3,7 +3,7 @@ export interface ImageService {
 }
 
 export class SimpleImageService implements ImageService {
-  async search({ query }: { query: string }): Promise<string[]> {
+  async search(): Promise<string[]> {
     return [];
   }
 }

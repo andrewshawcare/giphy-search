@@ -16,7 +16,5 @@ test("returns images by year", async () => {
     .get("/api/search/abstract")
     .set("Accept", "application/json");
 
-  console.log(response);
-
   assert.deepStrictEqual(response.body, imagesByYear);
 });
