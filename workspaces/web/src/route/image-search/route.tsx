@@ -6,7 +6,7 @@ import { ImageService } from "../../service/image/service.js";
 
 interface ImageSearchRouteProps extends RouteProps {
   title: string;
-  logo: string;
+  logo?: string;
   defaultQuery: string;
   imageService: ImageService;
 }
@@ -24,7 +24,7 @@ export function ImageSearchRoute(props: ImageSearchRouteProps) {
       <article className="image search route">
         <header>
           <h1 className="title">
-            <img className="logo" src={props.logo} />
+            {props.logo ? <img className="logo" src={props.logo} /> : null}
             {props.title}
           </h1>
           <Search defaultQuery={query} onQueryChange={setQuery} />

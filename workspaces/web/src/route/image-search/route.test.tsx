@@ -12,12 +12,12 @@ test("includes the title", async () => {
 
   const title = "Image Search";
 
+  global.IS_REACT_ACT_ENVIRONMENT = true;
   await act(async () => {
     const root = createRoot(rootElement);
     root.render(
       <ImageSearchRoute
         title={title}
-        logo=""
         defaultQuery=""
         path="/"
         imageService={new SimpleImageService()}
