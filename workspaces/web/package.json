@@ -5,7 +5,7 @@
     "scripts": {
         "build": "parcel build",
         "lint": "eslint",
-        "test": "tsx --test '**/*.test.tsx'",
+        "test": "node --import @swc-node/register/esm-register --test '**/*.test.tsx'",
         "develop": "parcel"
     },
     "dependencies": {
@@ -19,7 +19,6 @@
         "@types/react": "19.0.12",
         "@types/react-dom": "19.0.4",
         "global-jsdom": "26.0.0",
-        "parcel": "2.14.1",
-        "tsx": "4.19.3"
+        "parcel": "2.14.1"
     }
 }
