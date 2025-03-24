@@ -1,4 +1,10 @@
 import { configuration } from "./configuration.js";
-import { app } from "./app.js";
+import { App } from "./app.js";
+import { GiphyImageService } from "./service/image/giphy-image-service.js";
+
+const app = App({
+  origin: configuration.web.origin,
+  imageService: new GiphyImageService(configuration.giphy),
+});
 
 app.listen(configuration.api.port);

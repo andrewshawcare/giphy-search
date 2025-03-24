@@ -1,12 +1,22 @@
-import CORS from "cors";
 import Express from "express";
-import SearchRouter from "./router/search/index.js";
-import { configuration } from "./configuration.js";
+import CORS from "cors";
+import { ImageSearchRouter } from "./router/image-search/index.js";
+import { ImageService } from "./service/image/image-service.js";
 
-export const app = Express();
+export function App({
+  origin,
+  imageService,
+}: {
+  origin: string;
+  imageService: ImageService;
+}) {
+  const app = Express();
 
-app.use(Express.static("static"));
+  app.use(Express.static("static"));
 
-app.use(CORS({ origin: configuration.web.origin }));
+  app.use(CORS({ origin }));
 
-app.use("/api/search", SearchRouter);
+  app.use("/api/search", ImageSearchRouter({ imageService }));
+
+  return app;
+}

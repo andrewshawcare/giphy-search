@@ -1,27 +1,25 @@
 import { useState } from "react";
 
 interface SearchProps {
-  initialSearchValue: string;
+  defaultQuery: string;
   onQueryChange: (query: string) => void;
 }
 
 export function Search(props: SearchProps) {
-  const [searchValue, setSearchValue] = useState<string>(
-    props.initialSearchValue
-  );
+  const [query, setQuery] = useState<string>(props.defaultQuery);
 
   return (
     <form
       className="search"
       onSubmit={(event) => {
         event.preventDefault();
-        props.onQueryChange(searchValue);
+        props.onQueryChange(query);
       }}
     >
       <input
         type="search"
-        value={searchValue}
-        onChange={(event) => setSearchValue(event.target.value)}
+        value={query}
+        onChange={(event) => setQuery(event.target.value)}
       />
     </form>
   );
