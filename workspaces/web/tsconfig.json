@@ -1,11 +1,6 @@
 {
+    "extends": "../../tsconfig.json",
     "compilerOptions": {
-        "module": "ESNext",
-        "target": "ESNext",
-        "moduleResolution": "bundler",
-        "noEmit": true,
-        "strict": true,
-        "jsx": "react-jsx",
-        "skipLibCheck": true
+        "noEmit": true
     }
 }
