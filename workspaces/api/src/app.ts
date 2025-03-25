@@ -16,7 +16,7 @@ export function App({
 
   app.use(CORS({ origin }));
 
-  app.use("/api/search", ImageSearchRouter({ imageService }));
+  app.use("/api/image/search", ImageSearchRouter({ imageService }));
 
   return app;
 }

@@ -17,7 +17,7 @@ export class GiphyImageService implements ImageService {
 
   async search({ query }: { query: string }): Promise<string[]> {
     const imageSearchResponse = await fetch(
-      `${this.origin}/api/search/${query}`
+      `${this.origin}/api/image/search/${query}`
     );
     const imageSearchJson = await imageSearchResponse.json();
     return typeof imageSearchJson === "object"
