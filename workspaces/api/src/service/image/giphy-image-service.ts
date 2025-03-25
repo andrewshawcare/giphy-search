@@ -25,6 +25,7 @@ export class GiphyImageService implements ImageService {
   constructor(configuration: Configuration["giphy"]) {
     this.configuration = configuration;
   }
+
   async search({
     query,
   }: SearchParameters): ReturnType<ImageService["search"]> {
