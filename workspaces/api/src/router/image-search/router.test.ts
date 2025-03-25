@@ -12,9 +12,7 @@ test("returns images by year", async () => {
   });
   const testAgent = SuperTest(app);
 
-  const response = await testAgent
-    .get("/api/search/abstract")
-    .set("Accept", "application/json");
+  const response = await testAgent.get("/api/search/abstract");
 
   assert.deepStrictEqual(response.body, imagesByYear);
 });
