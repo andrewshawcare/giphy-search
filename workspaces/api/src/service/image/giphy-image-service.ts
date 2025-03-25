@@ -6,21 +6,17 @@ import {
   SearchParameters,
 } from "./image-service.js";
 
-interface GiphyImage {
-  url: string;
-}
-
-interface GiphyImages {
-  fixed_width: GiphyImage;
-}
-
-interface GiphyImageSearchDatum {
-  import_datetime: string;
-  images: GiphyImages;
-}
-
 interface GiphyImageSearchResponse {
-  data: GiphyImageSearchDatum[];
+  data: [
+    {
+      import_datetime: string;
+      images: {
+        fixed_width: {
+          url: string;
+        };
+      };
+    }
+  ];
 }
 
 export class GiphyImageService implements ImageService {
