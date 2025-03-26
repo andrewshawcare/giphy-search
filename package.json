@@ -20,6 +20,7 @@
         "eslint": "9.22.0",
         "typescript": "5.8.2",
         "typescript-eslint": "8.26.1",
-        "nx": "20.6.2"
+        "nx": "20.6.2",
+        "@testing-library/dom": "^9.0.0"
     }
 }
